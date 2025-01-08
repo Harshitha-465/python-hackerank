@@ -1,0 +1,17 @@
+# Read the number of words
+n = int(input())
+# Initialize an empty list and a dictionary
+words_list = []
+words_count = {}
+# Read each word and update the list and dictionary
+for _ in range(n):
+    word = input().strip()
+    if word not in words_count:
+        words_list.append(word)
+        words_count[word] = 1
+    else:
+        words_count[word] += 1
+# Print the number of distinct words
+print(len(words_list))
+# Print the occurrences of each word in the order of their first appearance
+print(' '.join(str(words_count[word]) for word in words_list))
